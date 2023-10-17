@@ -4,18 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0"
+    android:background="#060"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/card1"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_10_of_spades"
+        app:layout_constraintBottom_toTopOf="@id/card4"
+        app:layout_constraintEnd_toStartOf="@id/card2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/card2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_10_of_spades"
+        app:layout_constraintBottom_toTopOf="@id/card4"
+        app:layout_constraintEnd_toStartOf="@id/card3"
+        app:layout_constraintStart_toEndOf="@id/card1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/card3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_10_of_spades"
+        app:layout_constraintBottom_toTopOf="@id/card4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/card4"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_10_of_spades"
+        app:layout_constraintBottom_toTopOf="@id/btn_shuffle"
+        app:layout_constraintEnd_toStartOf="@id/card5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card1" />
+
+    <ImageView
+        android:id="@+id/card5"
+        android:layout_width="150dp"
         android:layout_height="0dp"
         android:src="@drawable/c_10_of_spades"
         app:layout_constraintBottom_toTopOf="@id/btn_shuffle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@id/card4"
+        app:layout_constraintTop_toBottomOf="@id/card1" />
 
     <Button
         android:id="@+id/btn_shuffle"
@@ -23,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Good Luck"
-        app:layout_constraintTop_toBottomOf="@id/card1"
+        app:layout_constraintTop_toBottomOf="@id/card4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"></Button>
 

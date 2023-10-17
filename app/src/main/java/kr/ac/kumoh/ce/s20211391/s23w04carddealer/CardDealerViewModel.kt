@@ -20,7 +20,17 @@ class CardDealerViewModel : ViewModel() {
             } while (num in newCards)
             newCards[i] = num
         }
-        newCards.sort()
+
+        for (i in 0 until newCards.size - 1){
+            for (j in 0 until newCards.size - i - 1){
+                if(newCards[j] % 13 > newCards[j + 1] % 13){
+                    val tmp = newCards[j]
+                    newCards[j]=newCards[j+1]
+                    newCards[j+1]=tmp
+                }
+            }
+        }
+
         _cards.value = newCards // 옵저버가 작동하도록 _cards의 값 변경 !중요
     }
 }

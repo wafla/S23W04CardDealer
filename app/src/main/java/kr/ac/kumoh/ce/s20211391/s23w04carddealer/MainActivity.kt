@@ -25,8 +25,11 @@ class MainActivity : AppCompatActivity() {
                 )
             } // !! -> Null이 아니다
             main.card1.setImageResource(res[0])
+            main.card2.setImageResource(res[1])
+            main.card3.setImageResource(res[2])
+            main.card4.setImageResource(res[3])
+            main.card5.setImageResource(res[4])
         }
-
         main.btnShuffle.setOnClickListener { model.shuffle() }
 
     }
@@ -41,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val number = when(c % 13){
+            -1 -> "joker"
             0 -> "ace"
             in 1..9 -> (c % 13 + 1).toString()
             //10 -> {
@@ -52,7 +56,9 @@ class MainActivity : AppCompatActivity() {
             12 -> "king"
             else -> "error"
         }
-        return if(number in arrayOf("jack", "queen", "king"))
+        return if(number in arrayOf("joker"))
+            "c_red_joker"
+            else if(number in arrayOf("jack", "queen", "king"))
              "c_${number}_of_${shape}2"
             else
              "c_${number}_of_${shape}"
