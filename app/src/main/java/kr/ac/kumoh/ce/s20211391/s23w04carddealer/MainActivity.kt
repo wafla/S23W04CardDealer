@@ -29,9 +29,11 @@ class MainActivity : AppCompatActivity() {
             main.card3.setImageResource(res[2])
             main.card4.setImageResource(res[3])
             main.card5.setImageResource(res[4])
+
+            val result = getResult(it)
+            main.result.text = result
         }
         main.btnShuffle.setOnClickListener { model.shuffle() }
-
     }
 
     private fun getCardName(c: Int) : String{
@@ -63,4 +65,11 @@ class MainActivity : AppCompatActivity() {
             else
              "c_${number}_of_${shape}"
     }
+
+    private fun getResult(arr: IntArray) : String{
+        return if(arr[0] == -1)
+            "Click The Button"
+        else
+            "TEsT"
+    } // TODO : 족보 완성
 }
